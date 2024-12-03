@@ -1,12 +1,117 @@
-
-/* 
-
-    You can write your own styles here...
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.morning{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/src/styles/imagenesBackground/morning.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+.afternoon{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/src/styles/imagenesBackground/afternoon.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.night {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/src/styles/imagenesBackground/night.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+}
 
-*/
+
+.card{
+    width: 60%;
+    color:rgba(255, 255, 255, 0.87);
+    border: 0;
+    padding: 40px;
+    background-color: transparent;
+    gap:60px;
+}
+.card-tittle{
+    text-align: center;
+}
+.card-body-one{
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8), 
+    -5px -5px 15px rgba(255, 255, 255, 0.2); 
+    display: inline-block;
+    text-align: center;
+    margin: 20px auto;
+}
+.card-body-one:hover{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9),
+    -10px -10px 20px rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.card-tittle{
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.card-text{
+    font-size: larger;
+}
+.card-hour{
+    font-size: 10rem;
+    font-weight: 700;
+    
+}
+
+.boton{
+    width:40%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: stretch;
+    padding:40px;
+}
+.btn{
+    font-size: xx-large;
+    color: white;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.155);
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8), 
+    -5px -5px 15px rgba(255, 255, 255, 0.2); 
+       
+}
+.btn:hover{
+    color:white;
+    background-color: rgba(0, 0, 0, 0.484);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9),
+    -10px -10px 20px rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+.collage{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    background-color: rgba(208, 197, 197, 0.349); 
+    padding: 20px;
+    border-radius: 10px;
+    gap:20px;
+    
+}

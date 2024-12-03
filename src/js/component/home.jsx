@@ -1,26 +1,45 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
+import React, { useState, useEffect } from "react";
+import Card from "./card.jsx";
+import Button from "./Button.jsx";
+import '/src/styles/index.css'
+const cardProps = {text:'"El tiempo es el mejor de los maestros, pero desafortunadamente mata a sus alumnos."',
+	               autor: '– Louis Hector Berlioz',
+				   ciudad: 'IN IGUALADA, BAR'
+}
+const buttonProps = {country:'Europe/España',
+	                  week: 48,
+}
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+	const [background, setBackgroud] = useState('');
+	 const getBackground = (hour) => {
+		if(hour >= 6 && hour < 12) return 'morning';
+		if(hour >= 12 && hour < 20) return 'afternoon';
+		return 'night';
+	 }
+	 useEffect(() => {
+		const upDateTime = () =>{
+		const now = new Date();
+		setBackgroud(getBackground(now.getHours()));
+		}
+		upDateTime();
+		const interval = setInterval(upDateTime,1000);
+      return () => clearInterval(interval);
 
+	 }, []);
+	return (<>
+	 <div className={background}>
+	   <Card
+	   {... cardProps}
+	   />
+	   <Button
+	   {...buttonProps}
+	   />
+	 </div>
+
+		
+    </>);
+};
 export default Home;
+
+
